@@ -47,6 +47,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--white-color);
+  font-family: 'Arial', sans-serif;
 }
 
 ul {
@@ -393,7 +394,7 @@ a {
 .internship-card .front, .internship-card .back {
     position: absolute;
     width: 100%;
-    height: 110%;
+    height: 100%;
     backface-visibility: hidden;
     transition: transform 0.6s;
     border: 1px solid #ccc;
@@ -472,7 +473,7 @@ a {
 }
 
 /* Contact Section */
-.contact {
+/* .contact {
 background: #ffffff;
 color: #333333;
 padding: 60px 20px;
@@ -512,6 +513,102 @@ transition: background 0.3s, transform 0.3s;
 {
 background: #40E0D0;
 transform: scale(1.1);
+} */
+
+.contact {
+  font-family: 'Arial', sans-serif;
+background: #ffffff;
+color: #333333;
+padding: 60px 20px;
+/* text-align: center; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  text-align: center;
+  color: #333;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.contact-form label .required {
+  color: red;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:hover, 
+.contact-form textarea:hover {
+  border-color: #6e8efb;
+  box-shadow: 0 0 8px rgba(110, 142, 251, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 8px rgba(110, 142, 251, 0.5);
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  background: #FF6F61;
+    color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #40E0D0;
+    transform: scale(1.1);
+}
+
+.contact-form .success-message {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Footer */
