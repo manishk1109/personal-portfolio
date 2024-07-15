@@ -1,5 +1,4 @@
 /*=============== SHOW MENU ===============*/
-const scriptURL = 'https://script.google.com/macros/s/AKfycbye9VNOl5mwRoEF8sxYYIE37sGXbWn6nTBcbgpeRtU2cZAOlM4pkfrfVAEhEnYyBcPz/exec'
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
@@ -48,13 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-const form = document.forms['contact-form']
-getComput
+function submitForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
-  .catch(error => console.error('Error!', error.message))
-})
+    if (name && email && message) {
+        const url = 'https://script.google.com/macros/s/AKfycbye9VNOl5mwRoEF8sxYYIE37sGXbWn6nTBcbgpeRtU2cZAOlM4pkfrfVAEhEnYyBcPz/exec';
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+
+        fetch(url, { method: 'POST', body: formData })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            })
+            .catch(error => console.error('Error!', error.message));
+    }
+}
